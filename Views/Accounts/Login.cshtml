@@ -1,0 +1,91 @@
+﻿@model Dental_Clinic_Management_System.Models.Account
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+   
+
+
+
+<div class="form-horizontal">
+
+    <div>
+
+    </div>
+    <h1 style="color:black">Login</h1>
+    <div class="clear-loading spinner">
+        <span></span>
+    </div>
+    <br />
+    <div style="font-size: large; border: solid; padding: 25px; border-radius: 20px; margin: auto; width: 350px; background-color: white ">
+        
+
+
+        <div class="agile-field-txt">
+            <label for="Username" class="form-label" style="font-size: 25px; font: bold"><i class="fa fa-user" aria-hidden="true"></i> Username </label>
+            <input type="text" class="form-control" id="Username" placeholder="Enter Username" name="Username" required style="font-size: 20px;">
+        </div>
+        <div class="agile-field-txt">
+            <label for="Password" class="form-label" style="font-size:25px;font:bold"><i class="fa fa-unlock-alt" aria-hidden="true"></i> password </label>
+            <input type="password" class="form-control" id="Password" placeholder="Enter Password" name="Password" style="font-size:20px;" required="">
+
+            <div class="agile_label">
+                <input id="check3" name="check3" type="checkbox" value="show Password" onclick="myFunction()">
+                <label class="check" for="check3" style="color:black">Show Password</label>
+            </div>
+        </div>
+        <!-- script for show password -->
+        <script>
+            function myFunction() {
+                var x = document.getElementById("Password");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        </script>
+        <!-- //end script -->
+        <button type="Submit" style="background-color: #4CAF50; padding:10px; border-radius: 12px; color: black; font-size: 20px; ">Login</button>
+
+
+
+
+
+    </div>
+
+    <div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+       
+
+
+    </div>
+</div>
+
+
+
+
+    }
+
+
+<!-- //form ends here -->
+<!--copyright-->
+
+
+
+

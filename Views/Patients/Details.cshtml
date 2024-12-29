@@ -1,0 +1,186 @@
+﻿@model Dental_Clinic_Management_System.Models.Patient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Patient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Patient Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pat_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Allergies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Allergies)
+        </dd>
+
+
+
+
+
+
+
+
+
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prescriptions)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Pre_Id</th>
+                    <th>X Ray</th>
+                    <th>Disease</th>
+                    <th>Medication</th>
+                    <th>Prescription List</th>
+                    <th>Current Health</th>
+                    <th>Cost</th>
+                    <th>Pay</th>
+                    <th>Rest</th>
+                </tr>
+                @foreach (var item in Model.Prescriptions)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pre_Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.X_Ray)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Disease)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Medication)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Prescription_List)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Current_Health)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cost)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pay)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rest)
+                        </td>
+
+                    </tr>
+                }
+            </table>
+        </dd>
+
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointments)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>App_Id</th>
+                    <th>Exam Date</th>
+                    <th>Reply Date</th>
+                    <th>Reason</th>
+
+                </tr>
+                @foreach (var item in Model.Appointments)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.App_Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Exam_Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Reply_Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Reason)
+                        </td>
+
+
+                    </tr>
+                }
+            </table>
+        </dd>
+
+
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Pat_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

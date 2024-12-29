@@ -1,0 +1,50 @@
+﻿@model Dental_Clinic_Management_System.Models.Appointment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Appointment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Patient Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.Pat_Name)
+        </dd>
+
+        <dt>
+            Examination Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exam_Date)
+        </dd>
+
+        <dt>
+            Reply Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reply_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.App_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

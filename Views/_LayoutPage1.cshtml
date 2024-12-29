@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/styles/font-awesome.css" rel="stylesheet" />
+
+    <link href="~/styles/style.css" rel="stylesheet" />
+
+    <link href="~/styles/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/styles/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/styles/bootstrap-reboot.css" rel="stylesheet" />
+
+    <link href="~/styles/bootstrap-reboot.min.css" rel="stylesheet" />
+  
+    <link href="~/styles/bootstrap.css" rel="stylesheet" />
+    <link href="~/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/styles/font-awesome.css" rel="stylesheet" />
+    
+    <link href="~/styles/main.css" rel="stylesheet" />
+    <script src="~/styles/main.js"></script>
+
+    <link href="~/styles/util.css" rel="stylesheet" />
+</head>
+<body>
+
+    <style>
+        body {
+            background-image: url('../images/wp1957139-1.jpg');
+           
+        }
+    </style>
+
+    <div>
+        @RenderBody()
+    </div>
+    <div class="container body-content">
+        <p>
+            &copy; @DateTime.Now.Year -Developed By: M.N.K
+            <br />
+            Contact Us :mnkq2000@gmail.com
+        </p>
+    </div>
+</body>
+</html>

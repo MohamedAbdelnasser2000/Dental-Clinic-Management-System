@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Dental_Clinic_Management_System.Models.Appointment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name:@Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+
+
+
+<table class="table table-bordered table-stripe">
+    <tr>
+        <th>
+            @Html.ActionLink("Patient Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Examination Date", "Index", new { sortOrder = ViewBag.DateSortParm })
+
+        </th>
+        <th>
+            @Html.ActionLink("Reply Date", "Index", new { sortOrder = ViewBag.DateSortParm })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reason)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient.Pat_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Exam_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reply_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reason)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.App_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.App_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.App_Id })
+            </td>
+        </tr>
+    }
+
+</table>

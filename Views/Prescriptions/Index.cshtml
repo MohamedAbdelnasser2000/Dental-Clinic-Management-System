@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Dental_Clinic_Management_System.Models.Prescription>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Patients</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name:@Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+
+
+
+
+<table class="table table-bordered table-stripe">
+    <tr>
+        <th>
+            @Html.ActionLink("Patient Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            X Ray
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disease)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Medication)
+        </th>
+        <th>
+            Prescription List
+        </th>
+        <th>
+            Current Health
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rest)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient.Pat_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.X_Ray)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disease)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medication)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prescription_List)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Current_Health)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rest)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Pre_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Pre_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Pre_Id })
+            </td>
+        </tr>
+    }
+
+</table>
